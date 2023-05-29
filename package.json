@@ -1,0 +1,25 @@
+{
+  "name": "starfinderpdftofoundry",
+  "version": "0.0.1",
+  "description": "This is a quick and dirty script that lets you take pdfs that contain certain",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prominus/starfinderpdftofoundry.git"
+  },
+  "keywords": [
+    "Starfinder",
+    "Paizo",
+    "TTRPG",
+    "VTT"
+  ],
+  "author": "prominus",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/prominus/starfinderpdftofoundry/issues"
+  },
+  "homepage": "https://github.com/prominus/starfinderpdftofoundry#readme"
+}

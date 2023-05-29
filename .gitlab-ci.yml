@@ -1,0 +1,19 @@
+image: node:15-buster
+
+stages:
+    - build
+
+before_script:
+    - apt-get update
+    - apt-get install zip
+
+build:
+    stage: build
+    script:
+        - zip starfinderpdftofoundry.zip -r starfinderpdftofoundry
+        - mkdir static_module
+        - cp starfinderpdftofoundry/module.json static_module
+    artifacts:
+        paths:
+            - starfinderpdftofoundry.zip
+            - static_module/module.json
