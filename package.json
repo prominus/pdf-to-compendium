@@ -1,8 +1,12 @@
 {
   "name": "starfinderpdftofoundry",
+  "type": "module",
   "version": "0.0.1",
-  "description": "This is a quick and dirty script that lets you take pdfs that contain certain",
-  "main": "index.js",
+  "engines": {
+    "node": ">=16"
+  },
+  "description": "This is a quick and dirty script that lets you take PDFs that contain certain",
+  "exports": "./index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -21,5 +25,13 @@
   "bugs": {
     "url": "https://github.com/prominus/starfinderpdftofoundry/issues"
   },
-  "homepage": "https://github.com/prominus/starfinderpdftofoundry#readme"
+  "homepage": "https://github.com/prominus/starfinderpdftofoundry#readme",
+  "dependencies": {
+    "node-qpdf": "^1.0.3",
+    "pdf-lib": "^1.17.1",
+    "stream-mime-type": "^2.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.2.5"
+  }
 }
