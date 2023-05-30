@@ -1,2 +1,3 @@
-dist
+esmodules
 node_modules
+venv
