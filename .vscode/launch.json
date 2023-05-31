@@ -7,11 +7,11 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "Launch Program",
+            "name": "Launch Typescript",
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "program": "${workspaceFolder}\\tscripts\\index.ts",
+            "program": "${workspaceFolder}\\scripts\\index.ts",
             "outFiles": [
                 "${workspaceFolder}/**/*.js"
             ]

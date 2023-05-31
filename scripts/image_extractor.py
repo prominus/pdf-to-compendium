@@ -1,13 +1,9 @@
 # https://www.youtube.com/watch?v=vsYi1uhUAL0
 from pikepdf import Pdf, PdfImage
 
-
-
-
 class ImageExtractor:
 
-    def extract_images(file:str) -> list[PdfImage]:
-        
+    def extract_images(file:str):
         pdf = Pdf.open(file)
 
         for pn, page in enumerate(pdf.pages, 1):
@@ -21,7 +17,7 @@ class ImageExtractor:
 def __test():
     file = r"C:/Users/Magenta/Documents/Starfinder/Starfinder - Alien Archive 1.pdf"
 
-    x = ImageExtractor.extract_images()
+    ImageExtractor.extract_images()
 
 if __name__ == '__main__':
     __test()
