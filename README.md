@@ -1,4 +1,8 @@
-# Starfinder PDF to Foundry Importer - Dev Notes
+# PDF Images to Foundry Importer - Dev Notes
+
+```{note}
+Developing for the Starfinder system, but could potentially be useful for other Foundry VTT systems.
+```
 
 ## Build Instructions
 

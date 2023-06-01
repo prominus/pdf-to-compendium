@@ -1,6 +1,6 @@
 {
-    "id": "starfinder-pdf-to-foundry",
-    "name": "starfinder-pdf-to-foundry",
+    "id": "pdf-images-to-foundry",
+    "name": "pdf-images-to-foundry",
     "title": "Starfinder PDF to Foundry",
     "description": "This is a quick and dirty script that lets you take PDFs that contain certain adventures, and export them to a format that is compatible with Foundry Virtual Tabletop for the Starfinder system.",
     "version": "0.0.1",
@@ -43,8 +43,8 @@
     "styles": [
         "./styles/style.css"
     ],
-    "manifest": "https://github.com/prominus/starfinder-pdf-to-foundry/blob/main/module.json",
-    "download": "https://github.com/prominus/starfinder-pdf-to-foundry/blob/main/module.json/starfinder-pdf-to-foundry.zip",
+    "manifest": "https://github.com/prominus/pdf-images-to-foundry_dev/blob/main/pdf-images-to-foundry/module.json",
+    "download": "https://github.com/prominus/pdf-images-to-foundry_dev/blob/main/module.json/pdf-images-to-foundry.zip",
     "languages": [
         {
             "lang": "en",
@@ -52,7 +52,7 @@
             "path": "lang/en.json"
         }
     ],
-    "url": "https://github.com/prominus/starfinder-pdf-to-foundry",
+    "url": "https://github.com/prominus/pdf-images-to-foundry_dev",
     "license": "LICENSE",
     "readme": "README"
 }

@@ -3,7 +3,7 @@ dist
 
 # typescript build folder
 esmodules
-starfinder-pdf-to-foundry/esmodules
+pdf-images-to-foundry/esmodules
 
 # package foldes
 node_modules

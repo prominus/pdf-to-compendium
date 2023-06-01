@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/prominus/starfinderpdftofoundry.git"
+    "url": "https://github.com/prominus/pdf-images-to-foundry_dev.git"
   },
   "keywords": [
     "Starfinder",
@@ -24,9 +24,9 @@
   "author": "prominus",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/prominus/starfinderpdftofoundry/issues"
+    "url": "https://github.com/prominus/pdf-images-to-foundry_dev/issues"
   },
-  "homepage": "https://github.com/prominus/starfinderpdftofoundry#readme",
+  "homepage": "https://github.com/prominus/pdf-images-to-foundry_dev/blob/main/README.md",
   "dependencies": {
   },
   "devDependencies": {
