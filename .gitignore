@@ -1,4 +1,12 @@
+# python package folder and default typescript build folder
 dist
+
+# typescript build folder
 esmodules
+starfinder-pdf-to-foundry/esmodules
+
+# package foldes
 node_modules
+
+# python virtual environment
 venv
