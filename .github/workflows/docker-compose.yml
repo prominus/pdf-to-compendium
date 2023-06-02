@@ -1,0 +1,26 @@
+version: '3.8'
+
+# TODO: None of this is tested yet
+
+services:
+
+  # service to build javascript from typescript
+  ts-node:
+    build: 
+      dockerfile: typescript.Dockerfile
+      target: base
+    volumes:
+      - ../pdf-images-to-foundry/esmodules:/home/node/pdf-images-to-foundry/esmodules
+    container_name: prominus001/ts_node
+    user: node
+
+  # service to build javascript from c++
+  emsdk:
+    build: 
+      dockerfile: emsdk.Dockerfile
+      target: base
+    volumes:
+      - ./image_extractor:/home/emscripten
+    container_name: prominus001/emsdk_qpdf
+    command: emcc image_extractor.cpp -o image_extractor.js
+    user: emscripten
