@@ -1,14 +1,21 @@
 {
     "cSpell.words": [
+        "EMSDK",
         "esmodules",
         "fileprefix",
         "importdialog",
         "kofi",
+        "libqpdf",
         "Paizo",
         "pdftofoundry",
+        "pikepdf",
+        "QPDF",
         "specialthanks",
         "Starfinder",
         "starfinderpdftofoundry",
         "TTRPG"
-    ]
+    ],
+    "cmake.configureOnOpen": true,
+    "cmake.sourceDirectory": "/workspaces/pdf-images-to-foundry_dev/image_extractor",
+    "cmake.buildDirectory": "/workspaces/pdf-images-to-foundry_dev/image_extractor/build"
 }

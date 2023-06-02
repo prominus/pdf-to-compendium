@@ -1,3 +1,5 @@
+// static library /user/lib/x86_64-linux-gnu/libqpdf.so
+// dynamic library /user/include/qpdf/*
 #include <qpdf/Buffer.hh>
 #include <qpdf/QIntC.hh>
 #include <qpdf/QPDF.hh>
@@ -31,12 +33,12 @@ private:
 void ImageExtractor::extractImages(char const *whoami, char const *infile)
 {
     //         pdf = Pdf.open(file)
-    QPDF inpdf;
-    inpdf.processFile(infile);
-    int pageno = 1;
+    QPDF input_pdf;
+    input_pdf.processFile(infile);
+    int page_number = 1;
 
     //         for pn, page in enumerate(pdf.pages, 1):
-    for (QPDFPageObjectHelper &page : QPDFPageDocumentHelper(inpdf).getAllPages())
+    for (QPDFPageObjectHelper &page : QPDFPageDocumentHelper(input_pdf).getAllPages())
     {
         //             for key in page.images.keys():
         // Get all images on the page.

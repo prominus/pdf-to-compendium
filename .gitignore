@@ -1,9 +1,13 @@
 # python package folder and default typescript build folder
+build
 dist
 
 # typescript build folder
 esmodules
 pdf-images-to-foundry/esmodules
+
+# cmake build folder
+image_extractor/build
 
 # package foldes
 node_modules

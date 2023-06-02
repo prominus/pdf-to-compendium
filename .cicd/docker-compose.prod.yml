@@ -1,5 +1,7 @@
 version: '3.8'
 
+# TODO: None of this is tested yet
+
 services:
 
   # service to build javascript from typescript
