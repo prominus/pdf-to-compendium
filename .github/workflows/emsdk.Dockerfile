@@ -22,8 +22,10 @@ WORKDIR /home/Downloads
     # cpack;                \
 
 # Install qpdf and create non root user
+# The packages libjsoncpp-dev libjsoncpp-doc libjsoncpp1 are for JSON reading
+# The libwebp-dev package is for saving images to webp
 RUN sudo apt-get update &&          \
-    sudo apt-get -y install build-essential gdb cmake zlib1g-dev libjpeg-dev libgnutls28-dev libssl-dev libtiff-tools qpdf libqpdf-dev ghostscript; \
+    sudo apt-get -y install build-essential gdb cmake zlib1g-dev libjpeg-dev libgnutls28-dev libssl-dev libjsoncpp-dev libjsoncpp-doc libjsoncpp1 libtiff-tools libwebp-dev qpdf libqpdf-dev ghostscript; \
 # User created in original container
 # Can be found in source code here https://github.com/trzecieu/emscripten-docker/blob/master/docker/trzeci/emscripten-slim/Dockerfile#L352
     groupmod -g "${GID}" emscripten && usermod -u "${UID}" -g "${GID}" emscripten 

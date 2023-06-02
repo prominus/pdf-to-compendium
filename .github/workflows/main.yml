@@ -1,4 +1,4 @@
-name: ci
+name: Building
 
 on:
     push:
@@ -23,10 +23,18 @@ jobs:
                 name: Set up Docker Buildx
                 uses: docker/setup-buildx-action@v2
             -
-                name: Build and push
+                name: Build typescript and push
                 uses: docker/build-push-action@v4
                 with:
                     context: .
                     file: ./.github/workflows/typescript.Dockerfile
                     push: true
                     tags: ${{ secrets.DOCKERHUB_USERNAME }}/typescript_node:latest
+            -
+                name: Build emsdk and push
+                uses: docker/build-push-action@v4
+                with:
+                    context: .
+                    file: ./.github/workflows/emsdk.Dockerfile
+                    push: true
+                    tags: ${{ secrets.DOCKERHUB_USERNAME }}/emsdk_qpdf:latest

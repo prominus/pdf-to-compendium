@@ -15,8 +15,8 @@ USER node
 WORKDIR /home/node
 
 # TODO: The production target has not been tested yet.
-FROM base as production
+# FROM base as production
 
-COPY --chown=node:node .. .
+# COPY --chown=node:node .. .
 
-RUN npm i && npm run build
+# RUN npm i && npm run build
