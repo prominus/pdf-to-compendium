@@ -5,6 +5,7 @@
         "fileprefix",
         "importdialog",
         "kofi",
+        "libpdftowebp",
         "libqpdf",
         "Paizo",
         "pdftofoundry",
@@ -17,9 +18,6 @@
         "tparam",
         "TTRPG"
     ],
-    "cmake.configureOnOpen": true,
-    "cmake.sourceDirectory": "${workspaceFolder}//pdf-to-webp",
-    "cmake.buildDirectory": "${workspaceFolder}//pdf-to-webp/build",
     "files.associations": {
         "new": "cpp",
         "array": "cpp",
@@ -78,6 +76,11 @@
         "mutex": "cpp",
         "semaphore": "cpp",
         "stop_token": "cpp",
-        "thread": "cpp"
-    }
+        "thread": "cpp",
+        "bitset": "cpp",
+        "regex": "cpp",
+        "iomanip": "cpp"
+    },
+    "cmake.configureOnOpen": false,
+    "cmake.sourceDirectory": "/workspaces/pdf-images-to-foundry_dev/pdf-to-webp"
 }
