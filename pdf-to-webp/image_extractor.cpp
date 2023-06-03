@@ -16,8 +16,8 @@
 #include <iostream>
 #include "image_extractor.h"
 
+using namespace pdftowebp;
 // from pikepdf import Pdf, PdfImage
-
 
 //     def extract_images(file:str):
 void ImageExtractor::extractImages(char const *whoami, char const *infile)
@@ -47,7 +47,6 @@ void ImageExtractor::extractImages(char const *whoami, char const *infile)
     // }
 }
 
-
 // def __test():
 //     file = r"C:/Users/Magenta/Documents/Starfinder/Starfinder - Alien Archive 1.pdf"
 
@@ -55,4 +54,3 @@ void ImageExtractor::extractImages(char const *whoami, char const *infile)
 
 // if __name__ == '__main__':
 //     __test()
-

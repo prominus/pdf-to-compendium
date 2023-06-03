@@ -9,5 +9,6 @@
 
 #include "artwork_handler.h"
 
+using namespace pdftowebp;
 
 // TODO: All the fancy image making

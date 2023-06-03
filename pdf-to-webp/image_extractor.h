@@ -3,17 +3,19 @@
 
 #include <qpdf/QPDFObjectHandle.hh>
 
-class ImageExtractor : public QPDFObjectHandle::StreamDataProvider
+namespace pdftowebp
 {
-public:
-    ~ImageExtractor() override = default;
-    // void provideStreamData(QPDFObjGen const& og, Pipeline* pipeline) override;
+    class ImageExtractor : public QPDFObjectHandle::StreamDataProvider
+    {
+    public:
+        ~ImageExtractor() override = default;
+        // void provideStreamData(QPDFObjGen const& og, Pipeline* pipeline) override;
 
-    void extractImages(
-        char const *whoami, char const *infile);
+        void extractImages(
+            char const *whoami, char const *infile);
 
-private:
-    std::map<QPDFObjGen, QPDFObjectHandle> copied_images;
-};
-
+    private:
+        std::map<QPDFObjGen, QPDFObjectHandle> copied_images;
+    };
+}
 #endif
