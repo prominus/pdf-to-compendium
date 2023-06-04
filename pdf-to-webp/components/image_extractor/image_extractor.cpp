@@ -20,13 +20,13 @@
 using namespace libpdftowebp;
 // from pikepdf import Pdf, PdfImage
 
-static char const* whoami = nullptr;
+// static char const* whoami = nullptr;
 
 //     def extract_images(file:str):
-void ImageExtractor::extractImages(char* arg, char const *infile)
+void ImageExtractor::extractImages(const Json::Value& json_ref, char const *infile)
 {
 
-    whoami = QUtil::getWhoami(arg);
+    // whoami = QUtil::getWhoami(arg);
 
 
     //         pdf = Pdf.open(file)

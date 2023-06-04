@@ -8,5 +8,3 @@ project(
 add_library(json_handle json_handle.cpp)
 target_link_directories(json_handle PRIVATE /usr/include/jsoncpp/)
 target_link_libraries(json_handle jsoncpp)
-add_executable(test_json_handle test.cpp)
-target_link_libraries(test_json_handle json_handle jsoncpp)

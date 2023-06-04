@@ -16,11 +16,11 @@ int main(int argc, char *argv[])
 {
     // TODO: Get schema for file. Pass this in as an argument
     std::string file = "/workspaces/pdf-images-to-foundry_dev/pdf-to-webp/app/example.json";
-    auto root = libpdftowebp::GetJsonHandle(file.c_str()); 
+    Json::Value* json_ref = libpdftowebp::GetJsonHandle(file.c_str()); 
 
-    // std::cout << "encoding: " << *(root)["encoding"] <<std::endl;
-    // std::cout << "plug-ins: " << *(root)["plug-ins"] <<std::endl;
-    // std::cout << "indent: " << *(root)["indent"] <<std::endl;
+    std::cout << "encoding: " << (*json_ref)["encoding"] <<std::endl;
+    std::cout << "plug-ins: " << (*json_ref)["plug-ins"] <<std::endl;
+    std::cout << "indent: " << (*json_ref)["indent"] <<std::endl;
 
     const std::size_t number_of_images = 2; // TODO: This should be pulled from the schema
 
@@ -33,14 +33,14 @@ int main(int argc, char *argv[])
     // TODO: create the image extractor workers
     libpdftowebp::ImageExtractor extractor = libpdftowebp::ImageExtractor();
 
-    extractor.extractImages(argv[0], "test");
+    extractor.extractImages(json_ref, "test");
     // auto *extractor = new ImageExtractor;
     // auto p = std::shared_ptr<QPDFObjectHandle::StreamDataProvider>(extractor);
 
     // TODO: create artwork handling workers
 
     // TODO: Wait for workers to finish and clear up
-    delete root;
+    delete json_ref;
 
     return 0;
 }

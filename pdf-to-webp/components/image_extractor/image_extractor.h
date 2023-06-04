@@ -11,7 +11,7 @@ namespace libpdftowebp
         ~ImageExtractor() override = default;
         // void provideStreamData(QPDFObjGen const& og, Pipeline* pipeline) override;
 
-        void extractImages(char * arg, char const *infile);
+        void extractImages(const Json::Value& json_ref, char const *infile);
 
     private:
         std::map<QPDFObjGen, QPDFObjectHandle> copied_images;
