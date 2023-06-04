@@ -3,6 +3,7 @@
         "EMSDK",
         "esmodules",
         "fileprefix",
+        "headerfile",
         "importdialog",
         "kofi",
         "libpdftowebp",
@@ -79,7 +80,10 @@
         "thread": "cpp",
         "bitset": "cpp",
         "regex": "cpp",
-        "iomanip": "cpp"
+        "iomanip": "cpp",
+        "csignal": "cpp",
+        "unordered_set": "cpp",
+        "fstream": "cpp"
     },
     "cmake.configureOnOpen": false,
     "cmake.sourceDirectory": "/workspaces/pdf-images-to-foundry_dev/pdf-to-webp"

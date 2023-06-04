@@ -1,66 +1,28 @@
-#include <array>
-#include <memory>
 #include "shared_array.h"
 
-/// @brief Verify if the index is within range
-/// @tparam N The max size for this Map
-/// @param index 
-/// @return 
-template<std::size_t N>
-std::size_t libpdftowebp::StaticMap<N>::isValidIndex(std::size_t index) const
-{
-    return capacity;
-}
 
-/// @brief 
-/// @tparam N 
-template<std::size_t N>
-libpdftowebp::StaticMap<N>::StaticMap() : capacity(N) {
-}
+    // auto test = libpdftowebp::Node("key", 1);
+    // std::cout << "The key is: " << test.key << std::endl;
+    // std::cout << "The value is: " << test.value << std::endl;
 
-/// @brief 
-/// @tparam N 
-template<std::size_t N>
-libpdftowebp::StaticMap<N>::~StaticMap()
-{
+     // std::cout << "The capacity for map is: " << map.getCapacity() << std::endl;
+
+    // auto get_size = map.getCapacity();
+    // auto images = map.getImages();
+    // auto ind = map.indexImage(1);
+
+    // auto image = map.findImage("test");
+
+    // int i = 0;
+    
     // for (auto &&image : images)
     // {
-
+    //     std::cout << "The key is: "<< image.key << std::endl;
+    //     image.key = "new_key_" + std::to_string(i);
+    //     i++;
+    //     // image = libpdftowebp::Node<std::string, std::shared_ptr<libpdftowebp::Image>>("new key", std::shared_ptr<libpdftowebp::Image>());
     // }
-}
-
-/// @brief 
-/// @tparam N 
-/// @param key 
-/// @return 
-template<std::size_t N>
-std::shared_ptr<libpdftowebp::Image> libpdftowebp::StaticMap<N>::findImage(std::string key) const
-{
-    for (auto &&image : images)
-    {
-        
-    }
     
-    return std::shared_ptr<libpdftowebp::Image>();
-}
-
-/// @brief 
-/// @tparam N 
-/// @param key 
-/// @param value 
-template<std::size_t N>
-void libpdftowebp::StaticMap<N>::insert(const std::string key, const std::shared_ptr<Image> value) const
-{
-}
-
-template <std::size_t N>
-int libpdftowebp::StaticMap<N>::getCapacity() const
-{
-    return 0;
-}
-
-template <std::size_t N>
-std::shared_ptr<libpdftowebp::Image> libpdftowebp::StaticMap<N>::indexImage(int index) const
-{
-    return std::shared_ptr<Image>();
-}
+    // images[2] = libpdftowebp::Node<std::string, std::shared_ptr<libpdftowebp::Image>>("test", std::shared_ptr<libpdftowebp::Image>());
+    // StaticMap map = StaticMap<number_of_images>();
+    // auto map = new StaticMap<number_of_images>();

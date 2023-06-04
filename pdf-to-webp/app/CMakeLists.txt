@@ -6,7 +6,10 @@ project(
     LANGUAGES CXX
 )
 
-# set(SOURCES main.cpp shared_array.cpp)
 add_executable(pdf_to_webp_application main.cpp)
-target_link_directories(pdf_to_webp_application PRIVATE ${CMAKE_SOURCE_DIR}/../components/shared_array/build/)
-target_link_libraries(pdf_to_webp_application shared_array)
+target_link_directories(
+    pdf_to_webp_application PRIVATE ${CMAKE_SOURCE_DIR}/../components/json_handle/build/
+    pdf_to_webp_application PRIVATE ${CMAKE_SOURCE_DIR}/../components/shared_array/build/
+    pdf_to_webp_application PRIVATE ${CMAKE_SOURCE_DIR}/../components/image_extractor/build/
+    )
+target_link_libraries(pdf_to_webp_application json_handle shared_array image_extractor)

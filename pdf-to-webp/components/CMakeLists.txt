@@ -7,4 +7,6 @@ project(
 )
 add_subdirectory(artwork_handler)
 add_subdirectory(image_extractor)
+add_subdirectory(json_handle)
 add_subdirectory(shared_array)
+add_subdirectory(test_doctest)

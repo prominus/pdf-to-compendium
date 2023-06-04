@@ -11,6 +11,7 @@
 #include <qpdf/QPDFPageDocumentHelper.hh>
 #include <qpdf/QPDFPageObjectHelper.hh>
 #include <qpdf/QPDFWriter.hh>
+#include <qpdf/QUtil.hh>
 #include <cstdlib>
 #include <cstring>
 #include <iostream>
@@ -19,9 +20,15 @@
 using namespace libpdftowebp;
 // from pikepdf import Pdf, PdfImage
 
+static char const* whoami = nullptr;
+
 //     def extract_images(file:str):
-void ImageExtractor::extractImages(char const *whoami, char const *infile)
+void ImageExtractor::extractImages(char* arg, char const *infile)
 {
+
+    whoami = QUtil::getWhoami(arg);
+
+
     //         pdf = Pdf.open(file)
     // QPDF input_pdf;
     // input_pdf.processFile(infile);
@@ -45,6 +52,7 @@ void ImageExtractor::extractImages(char const *whoami, char const *infile)
     //         //                 pdf_image.extract_to(fileprefix=f'img/page-{pn}-{name}')
     //     }
     // }
+
 }
 
 // def __test():
