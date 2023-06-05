@@ -10,6 +10,7 @@
         "libqpdf",
         "Paizo",
         "pdftofoundry",
+        "pdftoweb",
         "pdftowebp",
         "pikepdf",
         "QPDF",
@@ -86,5 +87,11 @@
         "fstream": "cpp"
     },
     "cmake.configureOnOpen": false,
-    "cmake.sourceDirectory": "/workspaces/pdf-images-to-foundry_dev/pdf-to-webp"
+    "cmake.sourceDirectory": "/workspaces/pdf-images-to-foundry_dev/pdf-to-webp",
+    "cmake.debugConfig": {
+        "args": [
+            "-h",
+            "--help"
+        ]
+    }
 }
