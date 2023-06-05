@@ -26,7 +26,7 @@ RUN sudo apt-get update &&          \
     sudo apt-get -y install build-essential gdb cmake   \
     zlib1g-dev libjpeg-dev libgnutls28-dev libssl-dev   \
     libjsoncpp-dev libjsoncpp-doc libtiff-tools         \
-    libwebp-dev qpdf libqpdf-dev ghostscript gcc-10     \
+    libwebp-dev qpdf libqpdf-dev ghostscript gcc-12     \
     gcc-12-base gcc-12-doc g++-12 libstdc++-12-dev      \
     libstdc++-12-doc clang-12 cmake-curses-gui valgrind;\
 # User created in original container

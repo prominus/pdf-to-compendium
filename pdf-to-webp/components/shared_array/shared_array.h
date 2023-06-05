@@ -53,11 +53,11 @@ namespace libpdftowebp
    class StaticMap
    {
    private:
-      const std::size_t capacity = 0;
+      const std::size_t capacity{0};
       bool isValidIndex(std::size_t index) const;
       std::array<ImgNodePtr, N> images{};
       std::mutex m;
-      std::size_t counter = 0;
+      std::size_t counter{0};
 
    public:
       StaticMap<N>();

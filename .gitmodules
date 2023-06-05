@@ -1,0 +1,3 @@
+[submodule "/workspaces/pdf-images-to-foundry_dev/pdf-to-webp/external/argparse"]
+	path = /workspaces/pdf-images-to-foundry_dev/pdf-to-webp/external/argparse
+	url = https://github.com/p-ranav/argparse.git
