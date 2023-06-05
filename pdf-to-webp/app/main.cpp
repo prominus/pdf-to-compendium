@@ -2,6 +2,7 @@
 #include <memory>
 #include <iostream>
 #include <string>
+#include <argparse/argparse.hpp>
 #include "../components/shared_array/shared_array.h"
 #include "../components/json_handle/json_handle.h"
 #include "../components/image_extractor/image_extractor.h"
@@ -14,7 +15,7 @@ static const char document[] =
     "       pdftoweb [OPTIONS] <infile> <schema>\r\n"
     "\r\n"
     "DESCRIPTION\r\n"
-    "       A parser tool to convert a PDF file to webp images. The names of images are dictated by a schema layout.\r\n"
+    "       \r\n"
     "\r\n"
     "OPTIONS\r\n"
     "       -v\r\n"
@@ -28,14 +29,31 @@ static const char document[] =
     "       -o\r\n"
     "       --output_folder\r\n";
 
-// It's deprecated to pass a string literal to a char *, so setting up these variables to
-// Prevent this warning/error: ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]
-const char * const h = "-h";
-const char * const help = "--help";
-const char * const v = "-v";
-const char * const version = "--version";
-const char * const o = "-o";
-const char * const output_folder = "--output-folder";
+
+argparse::ArgumentParser GenerateArgParse()
+{
+    // TODO: Don't hardcode the version
+    argparse::ArgumentParser program("pdftowebp", "0.0.1");
+
+    program.add_description("A parser tool to convert a PDF file to webp images. The names of images are dictated by a schema layout.");
+
+    // Optional output folder argument.
+    program.add_argument("-o", "--output-folder")
+        .help("The folder to place webp images")
+        .default_value<std::string>("artwork");
+
+    // PDF Filepath argument
+    program.add_argument("infile")
+        .required()
+        .help("The input PDF file path");
+
+    // JSON schema argument
+    program.add_argument("schema")
+        .required()
+        .help("The input JSON file path");
+
+    return program;
+};
 
 /// @brief Making a small struct to avoid importing tuple library
 struct indexTest
@@ -64,13 +82,13 @@ indexTest Contains(const std::vector<char *> &args, const char *const x)
     return indexTest(false, -1);
 }
 
-/// @brief 
-/// @param args 
-/// @return 
-int run(std::vector<char*> args)
+/// @brief
+/// @param args
+/// @return
+int run(std::vector<char *> args)
 {
-        // TODO: Get schema for file. Pass this in as an argument
-        std::string file = "/workspaces/pdf-images-to-foundry_dev/pdf-to-webp/app/example.json";
+    // TODO: Get schema for file. Pass this in as an argument
+    std::string file = "/workspaces/pdf-images-to-foundry_dev/pdf-to-webp/app/example.json";
     Json::Value *json_ref = libpdftowebp::GetJsonHandle(file.c_str());
 
     std::cout << "encoding: " << (*json_ref)["encoding"] << std::endl;
@@ -109,27 +127,43 @@ int run(std::vector<char*> args)
 /// @return 0 if it works...
 int main(int argc, char *argv[])
 {
-    // Copying char** over to a vector
-    std::vector<char *> args(argv, argv + argc);
-    
-    auto o_test = Contains(args, o);
-    auto output_folder_test = Contains(args, output_folder);
+    argparse::ArgumentParser program = GenerateArgParse();
 
-    if (argc == 1 || (Contains(args, help)).is_passed || (Contains(args, h).is_passed))
+    try
     {
-        std::cout << document << std::endl;
-        return 0;
+        program.parse_args(argc, argv);
     }
-    else if ((Contains(args, v)).is_passed || (Contains(args, version)).is_passed)
+    catch (const std::runtime_error &err)
     {
-        // TODO: Don't hard code the version
-        std::cout << "0.0.1" << std::endl;
-        return 0;
+        std::cerr << err.what() << std::endl;
+        std::cerr << program;
+        return 1;
     }
-    else if (o_test.is_passed || output_folder_test.is_passed)
-    {
-        // TODO: deal with changing output folder
-    }
-    
-    return run(args);
+
+    std::string infile = program.get<std::string>("infile");
+    std::string schema = program.get<std::string>("schema");
+    std::string output_folder = program.get<std::string>("--output-folder");
+    // // Copying char** over to a vector
+    // std::vector<char *> args(argv, argv + argc);
+
+    // auto o_test = Contains(args, o);
+    // auto output_folder_test = Contains(args, output_folder);
+
+    // if (argc == 1 || (Contains(args, help)).is_passed || (Contains(args, h).is_passed))
+    // {
+    //     std::cout << document << std::endl;
+    //     return 0;
+    // }
+    // else if ((Contains(args, v)).is_passed || (Contains(args, version)).is_passed)
+    // {
+    //     // TODO: Don't hard code the version
+    //     std::cout << "0.0.1" << std::endl;
+    //     return 0;
+    // }
+    // else if (o_test.is_passed || output_folder_test.is_passed)
+    // {
+    //     // TODO: deal with changing output folder
+    // }
+
+    return 0;
 }
