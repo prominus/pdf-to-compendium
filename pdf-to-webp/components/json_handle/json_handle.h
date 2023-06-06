@@ -5,7 +5,7 @@
 
 namespace libpdftowebp
 {
-    Json::Value *GetJsonHandle(const char *file);
+    std::shared_ptr<Json::Value> GetJsonHandle(const char *file);
 };
 
 #endif // JSON_HANDLE

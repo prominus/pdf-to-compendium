@@ -1,5 +1,4 @@
 #include <iostream>
-#include <jsoncpp/json/json.h>
 #include <fstream>
 #include <string>
 #include "json_handle.h"
@@ -10,10 +9,11 @@
 /// Based off of the provide [read from stream example](https://github.com/open-source-parsers/jsoncpp/blob/master/example/readFromStream/readFromStream.cpp).
 /// There is no check that the file is valid. That should be done already.
 /// @return The JSON object reference
-Json::Value* libpdftowebp::GetJsonHandle(const char* file)
+std::shared_ptr<Json::Value> libpdftowebp::GetJsonHandle(const char* file)
 {
     // The JSON handle workers will reference
-    Json::Value* json_handle = new Json::Value();
+    // Json::Value* json_handle = new Json::Value();
+    std::shared_ptr<Json::Value> json_handle = std::make_shared<Json::Value>();
     Json::Reader reader;
 
     // Stream in the JSON file

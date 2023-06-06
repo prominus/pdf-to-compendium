@@ -1,9 +1,6 @@
 // static libraries located at /user/lib/x86_64-linux-gnu
 // dynamic library located at /user/include/qpdf/*
 
-// JSON streaming
-#include <jsoncpp/json/json.h>
-
 // PDF image
 #include <qpdf/Buffer.hh>
 #include <qpdf/QIntC.hh>
@@ -17,13 +14,30 @@
 #include <iostream>
 #include "image_extractor.h"
 
-using namespace libpdftowebp;
-// from pikepdf import Pdf, PdfImage
+/// @brief 
+/// @param infile 
+/// @param schema 
+/// @param queue 
+libpdftowebp::ImageExtractor::ImageExtractor(const std::string infile, std::shared_ptr<TSQueue<ImgNode>> queue, std::shared_ptr<Json::Value> schema)
+// : infile(infile), file(schema), queue(queue)
+{
+    this->file = infile;
+    this->queue = queue;
+    this->schema = schema;
+}
 
-// static char const* whoami = nullptr;
+/// @brief 
+libpdftowebp::ImageExtractor::~ImageExtractor()
+{
+    queue.reset();
+    if (schema != nullptr)
+    {
+        schema.reset();
+    }
+}
 
-//     def extract_images(file:str):
-void ImageExtractor::extractImages(const Json::Value& json_ref, char const *infile)
+/// @brief 
+void libpdftowebp::ImageExtractor::HandleTask()
 {
 
     // whoami = QUtil::getWhoami(arg);
@@ -54,11 +68,3 @@ void ImageExtractor::extractImages(const Json::Value& json_ref, char const *infi
     // }
 
 }
-
-// def __test():
-//     file = r"C:/Users/Magenta/Documents/Starfinder/Starfinder - Alien Archive 1.pdf"
-
-//     ImageExtractor.extract_images()
-
-// if __name__ == '__main__':
-//     __test()

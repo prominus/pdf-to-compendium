@@ -1,5 +1,6 @@
 {
     "cSpell.words": [
+        "argparse",
         "EMSDK",
         "esmodules",
         "fileprefix",
@@ -18,6 +19,7 @@
         "Starfinder",
         "starfinderpdftofoundry",
         "tparam",
+        "TSQUEUE",
         "TTRPG"
     ],
     "files.associations": {
@@ -96,8 +98,9 @@
         "args": [
             "-o",
             "/workspaces/pdf-images-to-foundry_dev/test_folder/artwork",
-            "/workspaces/pdf-images-to-foundry_dev/test_folder/Starfinder - Alien Archive 1.pdf",
-            "/workspaces/pdf-images-to-foundry_dev/test_folder/test_schema.json"
+            "-s",
+            "/workspaces/pdf-images-to-foundry_dev/test_folder/test_schema.json",
+            "/workspaces/pdf-images-to-foundry_dev/test_folder/Starfinder - Alien Archive 1.pdf"
         ]
     }
 }

@@ -1,20 +1,17 @@
 #ifndef IMAGE_EXTRACTOR
 #define IMAGE_EXTRACTOR
 
-#include <qpdf/QPDFObjectHandle.hh>
+#include "../tsqueue/tsqueue.h"
 
 namespace libpdftowebp
 {
-    class ImageExtractor : public QPDFObjectHandle::StreamDataProvider
+    class ImageExtractor : public Handler
     {
     public:
-        ~ImageExtractor() override = default;
+        ImageExtractor(const std::string infile, std::shared_ptr<TSQueue<ImgNode>> queue, std::shared_ptr<Json::Value> schema);
+        ~ImageExtractor();
         // void provideStreamData(QPDFObjGen const& og, Pipeline* pipeline) override;
-
-        void extractImages(const Json::Value& json_ref, char const *infile);
-
-    private:
-        std::map<QPDFObjGen, QPDFObjectHandle> copied_images;
+        void HandleTask();
     };
 }
 #endif
