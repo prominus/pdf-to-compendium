@@ -1,14 +1,14 @@
-// static libraries located at /user/lib/x86_64-linux-gnu
-// dynamic library located at /user/include/qpdf/*
+// static libraries located at /usr/lib/x86_64-linux-gnu
+// dynamic library located at /usr/include/qpdf/*
 
 // PDF image
-#include <qpdf/Buffer.hh>
-#include <qpdf/QIntC.hh>
-#include <qpdf/QPDF.hh>
-#include <qpdf/QPDFPageDocumentHelper.hh>
-#include <qpdf/QPDFPageObjectHelper.hh>
-#include <qpdf/QPDFWriter.hh>
-#include <qpdf/QUtil.hh>
+// #include "/usr/include/qpdf/Buffer.hh"
+// #include "/usr/include/qpdf/QIntC.hh"
+// #include "/usr/include/qpdf/QPDF.hh"
+// #include "/usr/include/qpdf/QPDFPageDocumentHelper.hh"
+// #include "/usr/include/qpdf/QPDFPageObjectHelper.hh"
+// #include "/usr/include/qpdf/QPDFWriter.hh"
+// #include "/usr/include/qpdf/QUtil.hh"
 #include <cstdlib>
 #include <cstring>
 #include <iostream>
@@ -18,7 +18,7 @@
 /// @param infile 
 /// @param schema 
 /// @param queue 
-libpdftowebp::ImageExtractor::ImageExtractor(const std::string infile, std::shared_ptr<TSQueue<ImgNode>> queue, std::shared_ptr<Json::Value> schema)
+libpdftowebp::ImageExtractor::ImageExtractor(const std::string infile, std::shared_ptr<TSQueue<ImageNode>> queue, std::shared_ptr<Json::Value> schema)
 // : infile(infile), file(schema), queue(queue)
 {
     this->file = infile;

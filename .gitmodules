@@ -1,0 +1,6 @@
+[submodule "jsoncpp"]
+	path = /workspaces/pdf-images-to-foundry_dev/pdf-to-webp/components/external/jsoncpp
+	url = https://github.com/open-source-parsers/jsoncpp.git
+[submodule "qpdf"]
+	path = /workspaces/pdf-images-to-foundry_dev/pdf-to-webp/components/external/qpdf
+	url = https://github.com/qpdf/qpdf.git

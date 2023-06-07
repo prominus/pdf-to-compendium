@@ -14,8 +14,8 @@ SHELL [ "/bin/bash", "-c" ]
 RUN apt-get update && apt-get -y upgrade;
 RUN apt-get -y install sudo curl wget git-core gnupg \
     zlib1g-dev libjpeg-dev libgnutls28-dev libssl-dev   \
-    libjsoncpp-dev libjsoncpp-doc libtiff-tools         \
-    libwebp-dev qpdf libqpdf-dev ghostscript
+    # libjsoncpp-dev libjsoncpp-doc libtiff-tools qpdf libqpdf-dev     \
+    libwebp-dev ghostscript
 
 # Install clang
 RUN apt-get -y install clang-13

@@ -10,8 +10,13 @@ add_executable(pdf_to_webp_application main.cpp)
 target_link_directories(
     pdf_to_webp_application PRIVATE ${CMAKE_SOURCE_DIR}/../components/json_handle/build/
     pdf_to_webp_application PRIVATE ${CMAKE_SOURCE_DIR}/../components/artwork_handler/build/
-    # pdf_to_webp_application PRIVATE ${CMAKE_SOURCE_DIR}/../components/shared_array/build/
     pdf_to_webp_application PRIVATE ${CMAKE_SOURCE_DIR}/../components/image_extractor/build/
     pdf_to_webp_application PRIVATE ${CMAKE_SOURCE_DIR}/../external/argparse/build/
-    )
-target_link_libraries(pdf_to_webp_application json_handle artwork_handler image_extractor argparse)
+)
+
+target_link_libraries(pdf_to_webp_application 
+    json_handle
+    artwork_handler
+    image_extractor
+    argparse
+)

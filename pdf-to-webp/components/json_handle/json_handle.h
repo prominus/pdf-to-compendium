@@ -1,7 +1,7 @@
 #ifndef JSON_HANDLE
 #define JSON_HANDLE
 
-#include <jsoncpp/json/json.h>
+#include "jsoncpp/json/json.h"
 
 namespace libpdftowebp
 {

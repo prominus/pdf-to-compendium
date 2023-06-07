@@ -6,5 +6,5 @@ project(
     LANGUAGES CXX
 )
 add_library(image_extractor image_extractor.cpp)
-target_link_directories(image_extractor PRIVATE /usr/include/qpdf/)
-target_link_libraries(image_extractor qpdf)
+# target_link_directories(image_extractor PRIVATE /usr/include/qpdf/)
+# target_link_libraries(image_extractor qpdf)

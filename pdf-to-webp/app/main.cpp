@@ -1,7 +1,7 @@
 #include <array>
 #include <memory>
 #include <iostream>
-#include <stop_token>
+// #include <stop_token>
 #include <string>
 #include <thread>
 #include <argparse/argparse.hpp>
@@ -75,7 +75,7 @@ int main(int argc, char *argv[])
     std::shared_ptr<Json::Value> json_ref = (strcmp(schema.c_str(), "") == 0) ? nullptr : libpdftowebp::GetJsonHandle(schema.c_str());
 
     // TODO: The shared queue
-    std::shared_ptr<libpdftowebp::TSQueue<libpdftowebp::ImgNode>> queue = std::make_shared<libpdftowebp::TSQueue<libpdftowebp::ImgNode>>();
+    std::shared_ptr<libpdftowebp::TSQueue<libpdftowebp::ImageNode>> queue = std::make_shared<libpdftowebp::TSQueue<libpdftowebp::ImageNode>>();
 
     // Create the image extractor workers
     libpdftowebp::ImageExtractor extractor = libpdftowebp::ImageExtractor(infile, queue, json_ref);

@@ -6,15 +6,9 @@
 #include <iostream>
 #include <mutex>
 #include <queue>
-#include <utility>
-#include <jsoncpp/json/json.h>
-#include "../image/image.h"
 
 namespace libpdftowebp
 {
-    // Simplifying the node called in StaticMap
-    typedef std::pair<std::string, Image> ImgNode;
-    typedef std::shared_ptr<std::pair<std::string, Image>> ImgNodePtr;
 
     // Thread-safe queue
     template <typename T>
@@ -65,27 +59,6 @@ namespace libpdftowebp
             // return item
             return item;
         }
-    };
-
-    // typedef libpdftowebp::TSQueue<libpdftowebp::ImgNode> ImageQueue;
-
-    class Handler
-    {
-    public:
-        ~Handler()
-        {
-            if (schema != nullptr)
-            {
-                schema.reset();
-            }
-            queue.reset();
-        }
-        virtual void HandleTask() = 0;
-
-    protected:
-        std::shared_ptr<Json::Value> schema;
-        std::shared_ptr<libpdftowebp::TSQueue<libpdftowebp::ImgNode>> queue;
-        std::string file;
     };
 
 }

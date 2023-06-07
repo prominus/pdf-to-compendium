@@ -1,5 +1,5 @@
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
-#include <doctest.h>
+#include "/usr/include/doctest.h"
 #include <iostream>
 #include "test_doctest.h"
 
