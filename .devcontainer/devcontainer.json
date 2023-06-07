@@ -1,9 +1,9 @@
 // Use to develop C++ code without having to install and configure a machine.
 // For format details, see https://aka.ms/devcontainer.json.
 {
-	"name": "EMSDK_QPDF",
+	"name": "GCC13 EMSDK",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"image": "docker.io/prominus001/emsdk_qpdf:latest",
+	"image": "docker.io/prominus001/gcc13_emsdk:latest",
 	// Configure tool-specific properties.
 	"customizations": {
 		// Configure properties specific to VS Code.

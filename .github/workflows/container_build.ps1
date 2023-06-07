@@ -15,4 +15,4 @@ param(
 Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
 
 docker build --target $Target -t prominus001/typescript:$Tag -f typescript.Dockerfile .
-docker build --target $Target -t prominus001/emsdk_qpdf:$Tag -f emsdk.Dockerfile .
+docker build --target $Target -t prominus001/gcc13_emsdk:$Tag -f gcc13_emsdk.Dockerfile .

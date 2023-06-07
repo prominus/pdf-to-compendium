@@ -6,11 +6,16 @@
 #include <iostream>
 #include <mutex>
 #include <queue>
+#include <utility>
 #include <jsoncpp/json/json.h>
-#include "../shared_array/shared_array.h"
+#include "../image/image.h"
 
 namespace libpdftowebp
 {
+    // Simplifying the node called in StaticMap
+    typedef std::pair<std::string, Image> ImgNode;
+    typedef std::shared_ptr<std::pair<std::string, Image>> ImgNodePtr;
+
     // Thread-safe queue
     template <typename T>
     class TSQueue

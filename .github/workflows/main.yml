@@ -31,10 +31,10 @@ jobs:
                     push: true
                     tags: ${{ secrets.DOCKERHUB_USERNAME }}/typescript_node:latest
             -
-                name: Build emsdk and push
+                name: Build gcc13_emsdk and push
                 uses: docker/build-push-action@v4
                 with:
                     context: .
-                    file: ./.github/workflows/emsdk.Dockerfile
+                    file: ./.github/workflows/gcc13_emsdk.Dockerfile
                     push: true
-                    tags: ${{ secrets.DOCKERHUB_USERNAME }}/emsdk_qpdf:latest
+                    tags: ${{ secrets.DOCKERHUB_USERNAME }}/gcc13_emsdk:latest

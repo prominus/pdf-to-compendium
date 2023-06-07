@@ -6,8 +6,9 @@ project(
     LANGUAGES CXX
 )
 add_subdirectory(artwork_handler)
+add_subdirectory(handler)
+add_subdirectory(image)
 add_subdirectory(image_extractor)
 add_subdirectory(json_handle)
-add_subdirectory(shared_array)
 add_subdirectory(test_doctest)
 add_subdirectory(tsqueue)

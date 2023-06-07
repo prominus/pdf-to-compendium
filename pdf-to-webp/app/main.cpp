@@ -1,12 +1,13 @@
 #include <array>
 #include <memory>
 #include <iostream>
+#include <stop_token>
 #include <string>
+#include <thread>
 #include <argparse/argparse.hpp>
 #include "../components/artwork_handler/artwork_handler.h"
-#include "../components/shared_array/shared_array.h"
-#include "../components/json_handle/json_handle.h"
 #include "../components/image_extractor/image_extractor.h"
+#include "../components/json_handle/json_handle.h"
 
 
 
@@ -65,6 +66,10 @@ int main(int argc, char *argv[])
     std::string infile = program.get<std::string>("infile");
     std::string schema = program.get<std::string>("schema");
     std::string output_folder = program.get<std::string>("--output-folder");
+
+    // Threading c++20
+    // std::stop_source stop_source;
+    // std::jthread jt;
     
     // Get schema for file. Pass this in as an argument
     std::shared_ptr<Json::Value> json_ref = (strcmp(schema.c_str(), "") == 0) ? nullptr : libpdftowebp::GetJsonHandle(schema.c_str());
