@@ -10,10 +10,10 @@ project(
 # if (NOT jsoncpp_FOUND)
 #     message(STATUS "jsoncpp not found, initializing git submodule")
 #     execute_process(
-#         COMMAND git submodule update --init -- external/jsoncpp
+#         COMMAND git submodule update --init -- /workspaces/pdf-images-to-foundry_dev/pdf-to-webp/components/external/jsoncpp
 #         WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
 #     )
-#     message(STATUS "Adding json subdirectorj")
+#     message(STATUS "Adding json subdirectory")
     add_subdirectory(external/jsoncpp)
 # endif()
 
