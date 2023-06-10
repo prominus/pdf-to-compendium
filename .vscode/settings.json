@@ -93,14 +93,18 @@
         "variant": "cpp"
     },
     "cmake.configureOnOpen": false,
-    "cmake.sourceDirectory": "/workspaces/pdf-images-to-foundry_dev/pdf-to-webp",
+    "cmake.sourceDirectory": "/workspaces/pdf-images-to-foundry_dev/pdf-to-webp/app",
+    "cmake.buildDirectory": "/workspaces/pdf-images-to-foundry_dev/pdf-to-webp/app/build",
     "cmake.debugConfig": {
+        // "args": [
+        //     "-o",
+        //     "/workspaces/pdf-images-to-foundry_dev/test_folder/artwork",
+        //     "-s",
+        //     "/workspaces/pdf-images-to-foundry_dev/test_folder/test_schema.json",
+        //     "/workspaces/pdf-images-to-foundry_dev/test_folder/Starfinder - Alien Archive 1.pdf"
+        // ]
         "args": [
-            "-o",
-            "/workspaces/pdf-images-to-foundry_dev/test_folder/artwork",
-            "-s",
-            "/workspaces/pdf-images-to-foundry_dev/test_folder/test_schema.json",
-            "/workspaces/pdf-images-to-foundry_dev/test_folder/Starfinder - Alien Archive 1.pdf"
+            "-h"
         ]
     }
 }

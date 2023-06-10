@@ -14,8 +14,8 @@ SHELL [ "/bin/bash", "-c" ]
 RUN apt-get update && apt-get -y upgrade;
 RUN apt-get -y install sudo curl wget git-core gnupg \
     zlib1g-dev libjpeg-dev libgnutls28-dev libssl-dev   \
-    # libjsoncpp-dev libjsoncpp-doc libtiff-tools qpdf libqpdf-dev     \
-    libwebp-dev ghostscript
+    libjsoncpp-dev libjsoncpp-doc libtiff-tools qpdf libqpdf-dev     \
+    libwebp-dev ghostscript libzlcore0.13 libzlcore-dev libjpeg-tools
 
 # Install clang
 RUN apt-get -y install clang-13
@@ -25,6 +25,10 @@ RUN apt-get -y install cmake cmake-curses-gui
 RUN apt-get -y install valgrind
 # Install Python
 RUN apt-get -y install python3 python3-pip
+
+# Install NodeJS
+RUN curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash - &&\
+sudo apt-get install -y nodejs
 
 # Copy [doctest](https://github.com/doctest/doctest) to the container libraries
 WORKDIR /usr/include
