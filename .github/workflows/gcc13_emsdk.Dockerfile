@@ -30,6 +30,9 @@ RUN apt-get -y install python3 python3-pip
 RUN curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash - &&\
 sudo apt-get install -y nodejs
 
+# Install Typescript
+RUN npm install -D typescript
+
 # Copy [doctest](https://github.com/doctest/doctest) to the container libraries
 WORKDIR /usr/include
 RUN wget --show-progress https://raw.githubusercontent.com/doctest/doctest/master/doctest/doctest.h --output-document=doctest.h

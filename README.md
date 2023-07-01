@@ -1,4 +1,4 @@
-# PDF Images to Foundry Importer - Dev Notes
+# PDF to Compendium Importer - Dev Notes
 
 ```{note}
 Developing for the Starfinder system, but could potentially be useful for other Foundry VTT systems.

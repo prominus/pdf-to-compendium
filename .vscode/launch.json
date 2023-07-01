@@ -4,16 +4,24 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+
         {
+            "name": "Launch NodeJS Server",
             "type": "node",
             "request": "launch",
-            "name": "Launch Typescript",
-            "skipFiles": [
-                "<node_internals>/**"
-            ],
-            "program": "${workspaceFolder}\\scripts\\index.ts",
+            "program": "${workspaceFolder}/src/index.ts",
+            "cwd": "${workspaceFolder}",
             "outFiles": [
-                "${workspaceFolder}/**/*.js"
+                "${workspaceFolder}/pdf-to-compendium/scripts/**/*.js",
+                "!**/node_modules/**"
+            ],
+            "sourceMaps": true,
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "preLaunchTask": "npm: build",
+            "args": [
+                "C:\\Users\\Magenta\\Documents\\pdf-to-compendium\\input\\Starfinder - Alien Archive 1.pdf",
+                "C:\\Users\\Magenta\\Documents\\pdf-to-compendium\\output"
             ]
         }
     ]

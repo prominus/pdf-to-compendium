@@ -1,0 +1,48 @@
+{
+    "id": "pdf-images-to-foundry",
+    "name": "pdf-images-to-foundry",
+    "title": "Starfinder PDF to Foundry",
+    "description": "This is a quick and dirty script that lets you take PDFs that contain certain adventures, and export them to a format that is compatible with Foundry Virtual Tabletop for the Starfinder system.",
+    "version": "0.0.1",
+    "authors": [
+        {
+            "name": "Cody LeClair",
+            "discord": "prominus001#5173",
+            "url": "www.koaladown.quest",
+            "ko-fi": "prominus"
+        }
+    ],
+    "relationships": {
+        "systems": [
+            {
+                "id": "sfrpg",
+                "type": "system",
+                "compatibility": {}
+            }
+        ]
+    },
+    "minimumCoreVersion": "0.8.6",
+    "compatibleCoreVersion": "9",
+    "compatibility": {
+        "minimum": "0.8.6",
+        "verified": "10"
+    },
+    "esmodules": [
+        "./esmodule/main.bundle.js"
+    ],
+    "styles": [
+        "./styles/style.css"
+    ],
+    "manifest": "https://github.com/prominus/pdf-images-to-foundry_dev/blob/main/pdf-images-to-foundry/module.json",
+    "download": "https://github.com/prominus/pdf-images-to-foundry_dev/blob/main/module.json/pdf-images-to-foundry.zip",
+    "languages": [
+        {
+            "lang": "en",
+            "name": "English",
+            "path": "lang/en.json"
+        }
+    ],
+    "url": "https://github.com/prominus/pdf-images-to-foundry_dev",
+    "license": "LICENSE",
+    "readme": "README"
+}
