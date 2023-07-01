@@ -7,8 +7,7 @@ build
 dist
 
 # typescript build folder
-esmodules
-pdf-images-to-foundry/scripts
+pdf-to-compendium/scripts
 
 # Typescript
 node_modules/
