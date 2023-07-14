@@ -1,4 +1,4 @@
-import entry from "./entry";
+import entry from "./entry.js";
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 <form class="flexcol" id="form" autocomplete="off" onsubmit="event.preventDefault();">

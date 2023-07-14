@@ -8,6 +8,7 @@ dist
 
 # typescript build folder
 pdf-to-compendium/scripts/lib
+webpack-app/src/lib/pdfjs-dist
 
 # Typescript
 node_modules/
@@ -74,4 +75,3 @@ TEST-results.xml
 package-lock.json
 .eslintcache
 *v8.log
-lib/
