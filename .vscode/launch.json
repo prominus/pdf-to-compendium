@@ -4,21 +4,26 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
-
         {
-            "name": "Launch NodeJS Server",
+            "type": "chrome",
+            "request": "launch",
+            "name": "URL",
+            "file": "${workspaceFolder}/pdf-to-compendium/templates/index.html"
+
+        },
+        {
+            "name": "CLI",
             "type": "node",
             "request": "launch",
-            "program": "${workspaceFolder}/src/index.ts",
+            "program": "${workspaceFolder}/webpack-app/src/cli/cli.ts",
             "cwd": "${workspaceFolder}",
             "outFiles": [
-                "${workspaceFolder}/pdf-to-compendium/scripts/**/*.js",
+                "${workspaceFolder}/webpack-app/dist/**/*.js",
                 "!**/node_modules/**"
             ],
             "sourceMaps": true,
             "console": "integratedTerminal",
             "internalConsoleOptions": "neverOpen",
-            "preLaunchTask": "npm: build",
             "args": [
                 "C:\\Users\\Magenta\\Documents\\pdf-to-compendium\\input\\Starfinder - Alien Archive 1.pdf",
                 "C:\\Users\\Magenta\\Documents\\pdf-to-compendium\\output"

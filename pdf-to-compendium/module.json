@@ -1,9 +1,13 @@
 {
-    "id": "pdf-images-to-foundry",
-    "name": "pdf-images-to-foundry",
-    "title": "Starfinder PDF to Foundry",
-    "description": "This is a quick and dirty script that lets you take PDFs that contain certain adventures, and export them to a format that is compatible with Foundry Virtual Tabletop for the Starfinder system.",
+    "id": "pdf-to-compendium",
+    "name": "pdf-to-compendium",
+    "title": "PDF to Compendium",
+    "description": "This is a quick and dirty script that lets you take PDFs that contain certain adventures, and export them to a format that is compatible with Foundry Virtual Tabletop.",
     "version": "0.0.1",
+    "compatibility": {
+        "minimum": "11",
+        "verified": "11"
+      },
     "authors": [
         {
             "name": "Cody LeClair",
@@ -14,27 +18,26 @@
     ],
     "relationships": {
         "systems": [
-            {
-                "id": "sfrpg",
-                "type": "system",
-                "compatibility": {}
-            }
+          {
+            "id": "sfrpg",
+            "type": "system"
+          }
         ]
-    },
-    "minimumCoreVersion": "0.8.6",
-    "compatibleCoreVersion": "9",
-    "compatibility": {
-        "minimum": "0.8.6",
-        "verified": "10"
-    },
+      },
     "esmodules": [
-        "./esmodule/main.bundle.js"
+        "./module.js",
+        "./scripts/entry.js",
+        "./scripts/lib/mappings/image_map.js",
+        "./scripts/lib/mappings/json_map.js",
+        "./scripts/lib/schemas/schemas.js",
+        "./scripts/lib/schemas/sfrpg/alien_archive_1.js",
+        "./scripts/lib/schemas/sfrpg/alien_archive_2.js",
+        "./scripts/lib/schemas/sfrpg/alien_archive_3.js",
+        "./scripts/lib/workers/image_saver.js",
+        "./scripts/lib/workers/json_extractor.js",
+        "./scripts/lib/workers/pdf_extractor.js",
+        "./scripts/node_modules/pdfjs-dist/legacy/build/pdf.js"
     ],
-    "styles": [
-        "./styles/style.css"
-    ],
-    "manifest": "https://github.com/prominus/pdf-images-to-foundry_dev/blob/main/pdf-images-to-foundry/module.json",
-    "download": "https://github.com/prominus/pdf-images-to-foundry_dev/blob/main/module.json/pdf-images-to-foundry.zip",
     "languages": [
         {
             "lang": "en",
@@ -42,7 +45,7 @@
             "path": "lang/en.json"
         }
     ],
-    "url": "https://github.com/prominus/pdf-images-to-foundry_dev",
+    "url": "https://github.com/prominus/pdf-to-compendium",
     "license": "LICENSE",
     "readme": "README"
 }

@@ -7,7 +7,7 @@ build
 dist
 
 # typescript build folder
-pdf-to-compendium/scripts
+pdf-to-compendium/scripts/lib
 
 # Typescript
 node_modules/
