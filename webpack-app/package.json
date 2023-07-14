@@ -9,7 +9,7 @@
   "scripts": {
     "clean": "rimraf ../pdf-to-compendium/scripts",
     "dev": "vite",
-    "build": "tsc",
+    "build": "tsc & vite build",
     "preview": "vite preview"
   },
   "repository": {
@@ -36,10 +36,6 @@
     "vite": "^4.4.0"
   },
   "dependencies": {
-    "@bundled-es-modules/pdfjs-dist": "^3.6.172-alpha.1",
-    "pdf-lib": "^1.17.1",
-    "pdfjs": "^2.5.0",
-    "pdfjs-dist": "^3.8.162",
-    "tempy": "^3.1.0"
+    "pdf-lib": "^1.17.1"
   }
 }

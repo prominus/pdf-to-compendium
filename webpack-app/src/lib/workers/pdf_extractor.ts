@@ -1,9 +1,5 @@
-// import { PDFDocumentProxy, PDFPageProxy, getDocument, OPS, GlobalWorkerOptions } from "pdfjs-dist";
-// @ts-ignore
-import pdfjs from "../pdfjs-dist/build/pdf.js";
-// @ts-ignore
-// import * as pdfjsWorker from "../pdfjs-dist/build/pdf.worker.js";
-// const { getDocument, OPS } = pdfjs;
+// https://github.com/Hopding/pdf-lib/issues/83
+import { PDFDocument, PDFName, PDFRawStream } from "pdf-lib";
 import { ImageMap } from "../mappings/image_map.js";
 
 export class PdfData {
@@ -17,12 +13,23 @@ export class PdfData {
     }
 }
 
-const workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
-pdfjs.GlobalWorkerOptions.workerSrc = workerSrc;
+function readBlobAsArrayBuffer(blob: File) {
+    return new Promise((resolve, reject) => {
+        const reader = new FileReader();
 
-// Setting worker path to worker bundle.
-// Do not have webpack try to bundle with project. This just causes errors
-// pdfjs.GlobalWorkerOptions.workerSrc = './node_modules/pdfjs-dist/build/pdf.worker.entry.js';
+        reader.onload = () => {
+            const arrayBuffer = reader.result;
+            resolve(arrayBuffer);
+        };
+
+        reader.onerror = () => {
+            reader.abort();
+            reject(new Error('Failed to read Blob as Array Buffer.'));
+        };
+
+        reader.readAsArrayBuffer(blob);
+    });
+}
 
 /**
  * Extract all images and metadata from a PDF
@@ -31,95 +38,92 @@ pdfjs.GlobalWorkerOptions.workerSrc = workerSrc;
  * @returns A promised list of images and metadata from the PDF 
  */
 export async function GetPdfData(path: File) {
+    const imagesContainer = document.getElementById('images');
     //@ts-ignore
-    // const blobBuffer: ArrayBuffer = await readBlobAsArrayBuffer(path);
-    const blobUrl = URL.createObjectURL(path);
-    let pdf = await pdfjs.getDocument(blobUrl).promise;
+    const blobBuffer: ArrayBuffer = await readBlobAsArrayBuffer(path);
+    const u = URL.createObjectURL(path)
+    console.log(u.indexOf('XObject'))
+    let pdfDoc = await PDFDocument.load(blobBuffer, { ignoreEncryption: true });
+    const enumeratedIndirectObjects =
+        pdfDoc.context.enumerateIndirectObjects();
 
-    const metadata = await pdf.getMetadata();
+    //@ts-ignore
+    const t: string = (pdfDoc.getTitle() != undefined ? pdfDoc.getTitle() : "");
+    //@ts-ignore
+    const a: string = (pdfDoc.getAuthor() != undefined ? pdfDoc.getAuthor() : "");
+    //@ts-ignore
+    const d: string = (pdfDoc.getCreationDate() != undefined ? pdfDoc.getCreationDate() : "")?.toString();
     let pdf_data = new PdfData(
-        (metadata.info as any)['Title'],
-        (metadata.info as any)['Author'],
-        (metadata.info as any)['CreationDate']
+        t,
+        a,
+        d
     );
-    const totalNumPages = pdf.numPages;
-    // Iterate over all pages and push images to pagePromises
-    for (let currentPage = 1; currentPage <= totalNumPages; currentPage += 1) {
-        const images = getPageImages(currentPage, pdf);
-        pdf_data.images.push(...await images);
-    }
 
+    let objectIdx = 0;
+    enumeratedIndirectObjects.forEach(async ([pdfRef, pdfObject], ref: number) => {
+        if (!(pdfObject instanceof PDFRawStream)) return;
+
+        const { dict } = pdfObject;
+
+        const smaskRef = dict.get(PDFName.of('SMask'));
+        const colorSpace = dict.get(PDFName.of('ColorSpace'));
+        const subtype = dict.get(PDFName.of('Subtype'));
+        const width: any = dict.get(PDFName.of('Width'));
+        const height: any = dict.get(PDFName.of('Height'));
+        const name = dict.get(PDFName.of('Name'));
+        const bitsPerComponent: any = dict.get(
+            PDFName.of('BitsPerComponent')
+        );
+        const filter = dict.get(PDFName.of('Filter'));
+        const decode = PDFName.of('DCTDecode')
+
+        if (
+            subtype == PDFName.of('Image') &&
+            smaskRef != undefined &&
+            colorSpace != undefined &&
+            subtype != undefined &&
+            width != undefined &&
+            height != undefined &&
+            bitsPerComponent != undefined &&
+            filter != undefined &&
+            decode != undefined
+        ) {
+            objectIdx += 1;
+            pdf_data.images.push(
+                new ImageMap(
+                    ref,
+                    smaskRef,
+                    colorSpace,
+                    `Image${objectIdx}`,
+                    width.numberValue,
+                    height.numberValue,
+                    bitsPerComponent.numberValue,
+                    pdfObject.contents,
+                    filter === decode ? 'jpg' : 'png'
+                )
+            )
+        }
+    });
+
+    // test printing images on page
+    for (const image of pdf_data.images) {
+        // // @ts-ignore
+        // const imageData: BlobPart =
+        //     image.type === 'jpg' ? image.data : await savePng(image);
+        const imgElement = document.createElement('img');
+        imgElement.setAttribute(
+            'src',
+            URL.createObjectURL(
+                new Blob([image.data], { type: `image/${image.type}` })
+            )
+        );
+        imgElement.setAttribute('width', image.width.toString());
+        imgElement.setAttribute('height', image.height.toString());
+
+        if (imagesContainer != null) {
+            imagesContainer.appendChild(imgElement);
+        }
+        
+    }
     return pdf_data;
 }
-
-/**
- * Extract all images from the current PDF page
- * 
- * @param pageNum - The page number to grab
- * @param pdf - Reference to the PDF
- * @returns List of images from the PDF page
- */
-async function getPageImages(pageNum: number, pdf: any) {
-    const images: ImageMap[] = [];
-    try {
-        const pdfPage = await pdf.getPage(pageNum);
-        const operatorList = await pdfPage.getOperatorList();
-
-        // These indicate the element is an image
-        const validObjectTypes = [
-            pdfjs.OPS.paintXObject,
-            pdfjs.OPS.paintImageXObject,
-            pdfjs.OPS.paintInlineImageXObject
-        ];
-
-        // Iterate over each element in the page and store any element inferred to be an image
-        operatorList.fnArray
-            .forEach(async (element: any, idx: number) => {
-                if (validObjectTypes.includes(element)) {
-                    const imageName = operatorList.argsArray[idx][0];
-                    pdfPage.objs.get(imageName, async (image: any) => {
-                        console.log('page', pageNum, 'imageName', imageName, 'image', image);
-                        if (image != null && image.data != null) {
-                            const { width, height } = image;
-                            let i = new ImageMap(imageName, width, height, image.data);
-                            images.push(i);
-                        }
-                    });
-                }
-            });
-    } catch (error) {
-        console.log(error);
-    }
-    return images;
-}
-
-// async function getPageImages(pageNum: number, pdf: PDFDocumentProxy) {
-//     const images: ImageMap[] = [];
-//     try {
-//         const pdfPage: PDFPageProxy = await pdf.getPage(pageNum);
-//         const operatorList = await pdfPage.getOperatorList();
-
-//         // These indicate the element is an image
-//         const validObjectTypes = [
-//             OPS.paintJpegXObject,
-//             OPS.paintImageXObject,
-//             OPS.paintInlineImageXObject
-//         ];
-
-//         // Iterate over each element in the page and store any element inferred to be an image
-//         operatorList.fnArray
-//             .forEach((element, idx) => {
-//                 if (validObjectTypes.includes(element)) {
-//                     const imageName = operatorList.argsArray[idx][0];
-//                     console.log('page', pageNum, 'imageName', imageName);
-
-//                     pdfPage.objs.get(imageName, async (image: any) => {
-//                         const { width, height, _kind } = image;
-//                         images.push(new ImageMap(imageName, width, height, image.data));
-//                     });
-//                 }
-//             });
-//     } catch (error) {
-//         console.log(error);
-//     }
-//     return images;

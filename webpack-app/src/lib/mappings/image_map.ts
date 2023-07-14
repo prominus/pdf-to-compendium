@@ -1,9 +1,11 @@
 // import sharp from "sharp";
 
+import { PDFName, PDFObject, PDFRef } from "pdf-lib";
+
 export class GameMap {
     public imageFilePath: string = "icons/svg/mystery-man.svg";
     constructor(
-        public id:string,
+        public id: string,
         imageFilePath: string,
     ) {
         this.imageFilePath = imageFilePath;
@@ -20,7 +22,6 @@ export class GameMap {
 export class ImageMap {
 
     public mappings: GameMap[];
-    public bytes: number;
     public crop?: any; // sharp.Region;
     /**
      * 
@@ -30,29 +31,18 @@ export class ImageMap {
      * @param data - The raw image data extracted from the PDF
      */
     constructor(
+        public ref: number,
+        public smaskRef: PDFObject,
+        public colorSpace: PDFObject,
         public name: string,
         public width: number,
         public height: number,
-        public data: Uint8Array
+        public bitsPerComponent: number,
+        public data: Uint8Array,
+        public type: string
     ) {
-        this.bytes = data.length;
+        // this.bytes = data.length;
         this.mappings = [];
     }
-
-    /**
-     * Return the channel to use in generating a Raw image
-     */
-    public channels() {
-        let channels: 1 | 2 | 3 | 4 = 1;
-        let c = this.bytes / this.width / this.height;
-        if (c > 4) {
-            channels = 4;
-        } else if (c < 1) {
-            channels = 1;
-        } else {
-            channels = c as 1 | 2 | 3 | 4;
-        }
-        return channels;
-    };
 
 }
