@@ -1,4 +1,4 @@
-# PDF Images to Foundry Importer
+# PDF to Compendium Importer
 
 This is a quick and dirty script that lets you take PDFs that contain certain
 adventures, and export them to a format that is compatible with Foundry Virtual

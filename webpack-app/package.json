@@ -1,12 +1,16 @@
 {
-  "name": "pdf-to-compendium",
+  "name": "starfinderpdftofoundry",
   "version": "0.0.1",
   "type": "module",
+  "engines": {
+    "node": ">=17"
+  },
   "description": "This is a quick and dirty script that lets you take PDFs that contain certain",
   "scripts": {
-    "start": "node pdf-to-compendium/module.js",
-    "build": "cd webpack-app && npm run build",
-    "post-build": "npm install --prefix ./pdf-to-compendium/scripts pdfjs-dist"
+    "clean": "rimraf ../pdf-to-compendium/scripts",
+    "dev": "vite",
+    "build": "tsc & vite build",
+    "preview": "vite preview"
   },
   "repository": {
     "type": "git",
@@ -25,7 +29,13 @@
   },
   "homepage": "https://github.com/prominus/pdf-images-to-foundry_dev/blob/main/README.md",
   "devDependencies": {
-    "argparse": "^2.0.1",
-    "http-server": "^14.1.1"
+    "@league-of-foundry-developers/foundry-vtt-types": "^9.280.0",
+    "@types/node": "^20.3.2",
+    "rimraf": "^5.0.1",
+    "typescript": "^5.0.2",
+    "vite": "^4.4.0"
+  },
+  "dependencies": {
+    "pdf-lib": "^1.17.1"
   }
 }

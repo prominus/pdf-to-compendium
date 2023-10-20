@@ -5,15 +5,28 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "type": "chrome",
+            "request": "launch",
+            "name": "URL",
+            "file": "${workspaceFolder}/pdf-to-compendium/templates/index.html"
+
+        },
+        {
+            "name": "CLI",
             "type": "node",
             "request": "launch",
-            "name": "Launch Typescript",
-            "skipFiles": [
-                "<node_internals>/**"
-            ],
-            "program": "${workspaceFolder}\\scripts\\index.ts",
+            "program": "${workspaceFolder}/webpack-app/src/cli/cli.ts",
+            "cwd": "${workspaceFolder}",
             "outFiles": [
-                "${workspaceFolder}/**/*.js"
+                "${workspaceFolder}/webpack-app/dist/**/*.js",
+                "!**/node_modules/**"
+            ],
+            "sourceMaps": true,
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "args": [
+                "C:\\Users\\Magenta\\Documents\\pdf-to-compendium\\input\\Starfinder - Alien Archive 1.pdf",
+                "C:\\Users\\Magenta\\Documents\\pdf-to-compendium\\output"
             ]
         }
     ]

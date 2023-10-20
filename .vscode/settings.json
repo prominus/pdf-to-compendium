@@ -1,14 +1,13 @@
 {
     "cSpell.words": [
+        "argparse",
         "esmodules",
-        "fileprefix",
-        "importdialog",
         "kofi",
         "Paizo",
-        "pdftofoundry",
+        "sfrpg",
         "specialthanks",
         "Starfinder",
-        "starfinderpdftofoundry",
-        "TTRPG"
+        "TTRPG",
+        "vsharp"
     ]
 }
