@@ -15,7 +15,7 @@ export enum Extension {
 export async function printAllImages(outputFolder: string, images: ImageMap[], extension: Extension) {
     images.forEach(async (image: ImageMap) => {
         const file = outputFolder + `/${image.name}.${extension.valueOf()}`;
-        await saveWebPImage(image, file);
+        await saveImage(image, file);
     });
 }
 
@@ -34,17 +34,17 @@ export async function generateJNodeImages(prefix: string, extMods: string[], dic
             if (x === 'token' && value.icon !== undefined) {
                 const image = images.find(y => y.name === value.icon);
                 // TODO - put it in a circle banner
-                await saveWebPImage(image, file);
+                await saveToken(image, file);
             } else {
                 const image = images.find(y => y.name === value.orig);
-                await saveWebPImage(image, file);
+                await saveImage(image, file);
             }
 
         });
     });
 }
 
-async function saveWebPImage(image: ImageMap | undefined, file: string) {
+async function saveImage(image: ImageMap | undefined, file: string) {
     if (image != undefined) {
         const width = image.width;
         const height = image.height;
@@ -54,4 +54,54 @@ async function saveWebPImage(image: ImageMap | undefined, file: string) {
         }).toFile(file);
         console.log(`Image saved ${file}`);
     }
+}
+
+const tokenizeImage = Buffer.from(
+    '<svg><rect x="0" y="0" width="256" height="256" rx="256" ry="256"/></svg>'
+);
+
+async function saveToken(image: ImageMap | undefined, file: string) {
+    if (image != undefined) {
+        const width = image.width;
+        const height = image.height;
+        const channels = image.channels();
+        await sharp(image.data, {
+            raw: { width, height, channels }
+        })
+            .resize(256, 256)
+            .flatten({
+                background: '#ffffff'
+            })
+            .composite([
+                {
+                    input: tokenizeImage,
+                    blend: 'dest-in'
+                }
+            ])
+            .toFile(file);
+        console.log(`Image saved ${file}`);
+    }
+}
+
+async function tokenizeOriginalImage(image: ImageMap | undefined, file: string) {
+    if (image != undefined) {
+        const width = image.width;
+        const height = image.height;
+        const channels = image.channels();
+        await sharp(image.data, {
+            raw: { width, height, channels }
+        })
+            .resize(256, 256)
+            .flatten({
+                background: '#ffffff'
+            })
+            .composite([
+                {
+                    input: tokenizeImage,
+                    blend: 'dest-in'
+                }
+            ])
+            .toFile(file);
+    }
+    console.log(`Image saved ${file}`);
 }

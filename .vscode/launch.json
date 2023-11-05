@@ -20,7 +20,7 @@
             "internalConsoleOptions": "neverOpen",
             "preLaunchTask": "npm: build",
             "args": [
-                "C:\\Users\\Magenta\\Documents\\pdf-to-compendium\\input\\Starfinder - Alien Archive 1.pdf",
+                "C:\\Users\\Magenta\\Documents\\Starfinder\\Starfinder - Alien Archive 1.pdf",
                 "C:\\Users\\Magenta\\Documents\\pdf-to-compendium\\output"
             ]
         }
