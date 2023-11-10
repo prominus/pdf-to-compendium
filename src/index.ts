@@ -17,7 +17,7 @@ async function main(args: Args) {
 
     // Get schema
     let json_schema = (JsonExtractor(GameSystem.Starfinder, pdf_data.title) as iStarfinderDoc);
-    if (json_schema === undefined) {
+    if (json_schema === undefined && args.no_schema === false) {
       console.log("schema not found");
       return;
     }

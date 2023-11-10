@@ -14,7 +14,7 @@ export enum Extension {
  */
 export async function printAllImages(outputFolder: string, images: ImageMap[], extension: Extension) {
     images.forEach(async (image: ImageMap) => {
-        const file = outputFolder + `/${image.name}.${extension.valueOf()}`;
+        const file = outputFolder + "\\" + image.name + "." + extension.valueOf();
         await saveImage(image, file);
     });
 }
@@ -29,7 +29,7 @@ export async function generateJNodeImages(prefix: string, extMods: string[], dic
         // let files = extMod.map(x => `${outputFolder}/${jsonKey.toLowerCase().replace(re1, '_').replace(re2, '').replace(re3, '-')}.${x}.webp`);
         extMods.forEach(async x => {
             // Create the file
-            const file = `${prefix}/${key.toLowerCase().replace(re1, '_').replace(re2, '').replace(re3, '-')}.${x}.webp`;
+            const file = `${prefix}/${key.toLowerCase().replace(re1, '_').replace(re2, '').replace(re3, '-')}.${x}.png`;
             // Special case for token
             if (x === 'token' && value.icon !== undefined) {
                 const image = images.find(y => y.name === value.icon);
