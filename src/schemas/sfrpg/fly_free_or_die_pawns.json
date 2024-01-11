@@ -1,0 +1,517 @@
+{
+    "$schema": "../pdf_schema.json",
+    "name": "fly_free_or_die_pawns",
+    "title": "PZO7424E.pdf",
+    "author": "Copyright 2017 Paizo Inc.",
+    "creation_date": "",
+    "assets": {
+        "alien_archives": {
+            "ADALIA KELDIS": {
+                "id": "",
+                "orig": "img_p1_5"
+            },
+            "ADAMANT TALON": {
+                "id": "",
+                "orig": "img_p1_6"
+            },
+            "AGAVANA STONEBLOOD": {
+                "id": "",
+                "orig": "img_p1_2"
+            },
+            "ANACITE AMBASSADOR": {
+                "id": "",
+                "orig": "img_p1_7"
+            },
+            "ANDROID SECURITY GUARD": {
+                "id": "",
+                "orig": "img_p1_1"
+            },
+            "ARZENJ": {
+                "id": "",
+                "orig": "img_p1_9"
+            },
+            "AUGERWING": {
+                "id": "",
+                "orig": "img_p1_10"
+            },
+            "BATTLEFLOWER": {
+                "id": "",
+                "orig": "img_p1_11"
+            },
+            "CAPTAIN IRU": {
+                "id": "",
+                "orig": "img_p1_13"
+            },
+            "CHARITY": {
+                "id": "",
+                "orig": "img_p1_14"
+            },
+            "COMPANY SPY": {
+                "id": "",
+                "orig": "img_p1_15"
+            },
+            "DAOROS": {
+                "id": "",
+                "orig": "img_p1_16"
+            },
+            "DEMINDA": {
+                "id": "",
+                "orig": "img_p1_3"
+            },
+            "DIZZY": {
+                "id": "",
+                "orig": "img_p1_4"
+            },
+            "ELAMAR": {
+                "id": "",
+                "orig": "img_p1_17"
+            },
+            "ELINE REISORA": {
+                "id": "",
+                "orig": "img_p1_18"
+            },
+            "ESKA": {
+                "id": "",
+                "orig": "img_p1_19"
+            },
+            "ESTATE SECURITY": {
+                "id": "",
+                "orig": "img_p1_20"
+            },
+            "ESTRIAR ISATRA JAEZ": {
+                "id": "",
+                "orig": "img_p1_21"
+            },
+            "FUHLGEIST": {
+                "id": "",
+                "orig": "img_p1_22"
+            },
+            "GLAIAD": {
+                "id": "",
+                "orig": "img_p3_6"
+            },
+            "GOLDEN LEAGUE HITMAN": {
+                "id": "",
+                "orig": "img_p3_7"
+            },
+            "GOLDEN LEAGUE SOLDIER": {
+                "id": "",
+                "orig": "img_p3_8"
+            },
+            "HAFRIGEK XUN": {
+                "id": "",
+                "orig": "img_p4_2"
+            },
+            "HIVEHEAD": {
+                "id": "",
+                "orig": "img_p3_9"
+            },
+            "HOBBE HOUND": {
+                "id": "",
+                "orig": "img_p3_10"
+            },
+            "HOBGOBLIN TROOPER": {
+                "id": "",
+                "orig": "img_p3_11"
+            },
+            "HORIZON": {
+                "id": "",
+                "orig": "img_p3_12"
+            },
+            "HUGBOT INCAPACITATOR": {
+                "id": "",
+                "orig": "img_p3_1"
+            },
+            "IDENTITY": {
+                "id": "",
+                "orig": "img_p3_15"
+            },
+            "JINX": {
+                "id": "",
+                "orig": "img_p3_13"
+            },
+            "JUNKBOT DECOY": {
+                "id": "",
+                "orig": "img_p3_14"
+            },
+            "AGLIAN COLLECTIVE": {
+                "id": "",
+                "orig": "img_p3_17"
+            },
+            "ANACITE DUSTAR": {
+                "id": "",
+                "orig": "img_p3_5"
+            },
+            "ANACITE SENTRY": {
+                "id": "",
+                "orig": "img_p3_20"
+            },
+            "KAA-LEKI": {
+                "id": "",
+                "orig": "img_p5_15"
+            },
+            "KALO MERCENARY": {
+                "id": "",
+                "orig": "img_p5_5"
+            },
+            "KANTIR SURSA": {
+                "id": "",
+                "orig": "img_p5_1"
+            },
+            "KHULAN SUBORDINATE": {
+                "id": "",
+                "orig": "img_p5_6"
+            },
+            "KORUMAHAR LAVENI": {
+                "id": "",
+                "orig": "img_p5_2"
+            },
+            "KREECH NAKKAN": {
+                "id": "",
+                "orig": "img_p5_7"
+            },
+            "KYANHEX": {
+                "id": "",
+                "orig": "img_p5_8"
+            },
+            "LIGHTNING ELEMENTAL": {
+                "id": "",
+                "orig": "img_p5_9"
+            },
+            "LORD SINJIN": {
+                "id": "",
+                "orig": "img_p5_10"
+            },
+            "LOST CAUSE PIRATE": {
+                "id": "",
+                "orig": "img_p5_11"
+            },
+            "LUMINANCE-CLASS SECURITY ROBOT": {
+                "id": "",
+                "orig": "img_p5_12"
+            },
+            "MARAQUOI GUARD": {
+                "id": "",
+                "orig": "img_p5_13"
+            },
+            "MOYISHUU": {
+                "id": "",
+                "orig": "img_p5_3"
+            },
+            "NEMELITH ZYDAN": {
+                "id": "",
+                "orig": "img_p5_14"
+            },
+            "BARRO": {
+                "id": "",
+                "orig": "img_p5_18"
+            },
+            "CALAPHIDION": {
+                "id": "",
+                "orig": "img_p5_17"
+            },
+            "CICIL NIGHTSHADE": {
+                "id": "",
+                "orig": "img_p5_16"
+            },
+            "DIATHA": {
+                "id": "",
+                "orig": "img_p5_4"
+            },
+            "DIGIT": {
+                "id": "",
+                "orig": "img_p5_19"
+            },
+            "DRIFT LEECH": {
+                "id": "",
+                "orig": "img_p5_20"
+            },
+            "NIVA ROVO": {
+                "id": "",
+                "orig": "img_p7_16"
+            },
+            "PRELURIA PATROL": {
+                "id": "",
+                "orig": "img_p7_4"
+            },
+            "RENEVAYA THE GENTLE": {
+                "id": "",
+                "orig": "img_p7_5"
+            },
+            "RESISTANCE FIGHTER": {
+                "id": "",
+                "orig": "img_p7_6"
+            },
+            "ROBOT, GUARDIAN": {
+                "id": "",
+                "orig": "img_p7_7"
+            },
+            "RYGAN VUUL": {
+                "id": "",
+                "orig": "img_p7_8"
+            },
+            "SCOUNDREL": {
+                "id": "",
+                "orig": "img_p7_9"
+            },
+            "SEVARANNA PILOS": {
+                "id": "",
+                "orig": "img_p7_10"
+            },
+            "SHAN": {
+                "id": "",
+                "orig": "img_p7_11"
+            },
+            "SHIARI-8": {
+                "id": "",
+                "orig": "img_p7_13"
+            },
+            "SHIMREEN WARRIOR": {
+                "id": "",
+                "orig": "img_p7_12"
+            },
+            "SIGMA SEVEN": {
+                "id": "",
+                "orig": "img_p7_14"
+            },
+            "SPEWER": {
+                "id": "",
+                "orig": "img_p7_1"
+            },
+            "STRIDERMANDER": {
+                "id": "",
+                "orig": "img_p7_15"
+            },
+            "TARIKA": {
+                "id": "",
+                "orig": "img_p7_17"
+            },
+            "TATTOO GUARDIAN": {
+                "id": "",
+                "orig": "img_p7_2"
+            },
+            "VESHRED": {
+                "id": "",
+                "orig": "img_p7_3"
+            },
+            "DRIFT MOTE": {
+                "id": "",
+                "orig": "img_p7_18"
+            },
+            "DRIFTDEAD MALEFACTOR": {
+                "id": "",
+                "orig": "img_p7_19"
+            },
+            "DEFREX": {
+                "id": "",
+                "orig": "img_p9_2"
+            },
+            "DETONATION OOZE": {
+                "id": "",
+                "orig": "img_p9_6"
+            },
+            "GAMMENORE": {
+                "id": "",
+                "orig": "img_p9_4"
+            },
+            "MIDSHIPS MIMIC": {
+                "id": "",
+                "orig": "img_p9_7"
+            },
+            "ONI, TSABAGU": {
+                "id": "",
+                "orig": "img_p9_11"
+            },
+            "AVARIN SACRION": {
+                "id": "",
+                "orig": "img_p9_1"
+            },
+            "CYBERNETIC GOLEM": {
+                "id": "",
+                "orig": "img_p9_8"
+            },
+            "INKWARPED SINJIN": {
+                "id": "",
+                "orig": "img_p9_9"
+            },
+            "KING DREGOR": {
+                "id": "",
+                "orig": "img_p9_10"
+            },
+            "ANACITE MONITOR": {
+                "id": "",
+                "orig": "img_p9_3"
+            },
+            "HOLOFANG": {
+                "id": "",
+                "orig": "img_p9_5"
+            },
+            "SARCESIAN PIRATE": {
+                "id": "",
+                "orig": "img_p11_1"
+            },
+            "SHOBHAD ENFORCER": {
+                "id": "",
+                "orig": "img_p11_9"
+            },
+            "SHOBHAD WELDER": {
+                "id": "",
+                "orig": "img_p12_3"
+            },
+            "TERMINATOR-CLASS SECURITY ROBOT": {
+                "id": "",
+                "orig": "img_p11_7"
+            },
+            "SHANTAK": {
+                "id": "",
+                "orig": "img_p13_2"
+            },
+            "GIANT JELLY": {
+                "id": "",
+                "orig": "img_p13_1"
+            },
+            "LOVELORN": {
+                "id": "",
+                "orig": "img_p13_4"
+            },
+            "LIQUID ARSENATE": {
+                "id": "",
+                "orig": "img_p13_11"
+            },
+            "IMPORTED JAKKERANT": {
+                "id": "",
+                "orig": "img_p14_6"
+            },
+            "NECROHARVESTER": {
+                "id": "",
+                "orig": "img_p13_9"
+            },
+            "SHARD DIVER": {
+                "id": "",
+                "orig": "img_p13_10"
+            },
+            "GENEREAVER": {
+                "id": "",
+                "orig": "img_p13_8"
+            },
+            "GHOUL": {
+                "id": "",
+                "orig": "img_p13_7"
+            },
+            "VISANMARK": {
+                "id": "",
+                "orig": "img_p15_5"
+            },
+            "VOG MINEBREWER": {
+                "id": "",
+                "orig": "img_p15_6"
+            },
+            "VOID SLIME": {
+                "id": "",
+                "orig": "img_p15_7"
+            },
+            "XUN ASSASSIN": {
+                "id": "",
+                "orig": "img_p15_2"
+            },
+            "YUREI": {
+                "id": "",
+                "orig": "img_p15_8"
+            },
+            "ZANFORA": {
+                "id": "",
+                "orig": "img_p15_9"
+            },
+            "ZELDIRN": {
+                "id": "",
+                "orig": "img_p15_4"
+            },
+            "ZIVIX": {
+                "id": "",
+                "orig": "img_p16_9"
+            },
+            "SPACE GOBLIN SNEEKTHEEF": {
+                "id": "",
+                "orig": "img_p15_19"
+            },
+            "TELELITH": {
+                "id": "",
+                "orig": "img_p15_20"
+            },
+            "VORLATH MERCENARY": {
+                "id": "",
+                "orig": "img_p15_21"
+            }
+        },
+        "starships": {
+            "COMPENT WINDFALL": {
+                "id": "",
+                "orig": "img_p13_3"
+            },
+            "RISEN": {
+                "id": "",
+                "orig": "img_p11_6"
+            },
+            "NEVER HOME": {
+                "id": "",
+                "orig": "img_p11_5"
+            },
+            "EJ CORP NEGOTIATOR": {
+                "id": "",
+                "orig": "img_p11_11"
+            },
+            "COMPENT GUARDIAN": {
+                "id": "",
+                "orig": "img_p11_10"
+            },
+            "URSOLHA": {
+                "id": "",
+                "orig": "img_p11_8"
+            },
+            "BD514": {
+                "id": "",
+                "orig": "img_p15_15"
+            },
+            "DECOMMISSIONED SERVANOR TR-29": {
+                "id": "",
+                "orig": "img_p15_11"
+            },
+            "GOLDEN LEAGUE HIJACKER": {
+                "id": "",
+                "orig": "img_p15_12"
+            },
+            "LOST CAUSE": {
+                "id": "",
+                "orig": "img_p15_13"
+            },
+            "OLIPHAUNT": {
+                "id": "",
+                "orig": "img_p15_18"
+            },
+            "RUST BUG": {
+                "id": "",
+                "orig": "img_p15_16"
+            },
+            "SURNOCH’S TOOTH": {
+                "id": "",
+                "orig": "img_p15_1"
+            },
+            "SWORD-CLASS ATTACK VESSEL": {
+                "id": "",
+                "orig": "img_p15_14"
+            },
+            "WINTERMOURN": {
+                "id": "",
+                "orig": "img_p15_17"
+            },
+            "SHADE SPIRAL": {
+                "id": "",
+                "orig": "img_p15_22"
+            },
+            "YRGYTCHEE": {
+                "id": "",
+                "orig": "img_p15_23"
+            }
+        }
+    }
+}

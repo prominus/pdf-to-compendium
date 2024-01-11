@@ -20,8 +20,8 @@
             "internalConsoleOptions": "neverOpen",
             "preLaunchTask": "npm: build",
             "args": [
-                "C:\\Users\\Magenta\\Documents\\Starfinder\\Starfinder - Alien Archive 1.pdf",
-                "C:\\Users\\Magenta\\Documents\\pdf-to-compendium\\output"
+                "C:\\Users\\Magenta\\Documents\\Starfinder\\Fly Free or Die assets\\Fly Free or Die Pawns.pdf",
+                "C:\\Users\\Magenta\\Documents\\Starfinder\\Fly Free or Die assets"
             ]
         }
     ]
